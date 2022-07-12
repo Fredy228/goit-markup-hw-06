@@ -263,11 +263,19 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: scale var(--anim-link);
+    transition: fill var(--anim-link);
 }
 
 .btn-close-modal:hover .icon-close-modal {
-    transform: scale(1.3);
+    fill: var(--color-theme);
+}
+
+.modalw-form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /*----------- Esplly --------------*/
@@ -640,14 +648,19 @@ input{
 }
 
 .footer-item:first-child {
-    max-width: 231px;
+    width: 231px;
+    margin-right: 70px;
 }
 
-.footer-item:last-child {
-    max-width: 206px;
-    margin-left: 70px;
-    margin-top: 7px;
+.footer-item:nth-child(2) {
+    width: 207px;
 }
+
+.footer-item:nth-child(3) {
+    width: 570px;
+    margin-left: auto;
+}
+
 
 .logo-text.footer {
     color: white;
@@ -702,3 +715,74 @@ input{
 .social-link.social-link-footer:hover {
     background-color: var(--color-theme);
 }
+
+.footer-form {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer-form-group {
+    display: inline-flex;
+    flex-direction: column;
+    width: 358px;
+    margin-right: 12px;
+}
+
+.footer-form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.footer-form-field {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    height: 50px;
+    width: 100%;
+    padding: 0 16px;
+    outline: transparent;
+    color: #fff;
+}
+
+.footer-form-field:focus {
+    border-color: var(--color-theme);
+}
+
+.footer-form-btn {
+    background-color: var(--color-theme);
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    transition: background-color var(--anim-link);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.footer-form-btn:hover {
+    background-color: var(--color-btn-hover);
+}
+
+.ftr-form-btn-text {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+.ftr-form-btn-icon {
+    fill: #fff;
+}
+
+
+    
