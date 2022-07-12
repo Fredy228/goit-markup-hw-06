@@ -60,6 +60,20 @@ input{
     margin: 0 auto;
 }
 
+/* visually-hidden hide elements */
+.visually-hidden {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+
 /*------------- Header ------------*/
 
 .header {
@@ -242,7 +256,7 @@ input{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 581px;
+    height: auto;
     width: 528px;
     background-color: #fff;
     border-radius: 4px;
@@ -274,9 +288,162 @@ input{
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
+
+.modalw-form-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #212121;
+    width: 100%;
+}
+
+.modalw-form-group {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 18px;
+    position: relative;
+}
+
+.modalw-form-group:first-of-type {
+    margin-top: 30px;
+}
+
+.modalw-form-group:last-of-type {
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.modalw-form-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: var(--color-secondary-text);
+    margin-bottom: 4px;
+    position: absolute;
+    top: -18px;
+    left: 0;
+}
+
+.modal-form-field {
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color var(--anim-link);
+}
+
+.modal-form-field:focus {
+    border-color: var(--color-theme);
+}
+
+.modal-form-field:focus + .modalw-form-icon-f {
+    fill: var(--color-theme);
+}
+
+.modalw-form-icon-f {
+    fill: var(--color-main-text);
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: fill var(--anim-link);
+}
+
+.modal-form-textarea {
+    height: 120px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    resize: none;
+    padding: 12px 16px;
+    outline: transparent;
+    transition: border-color var(--anim-link);
+}
+
+.modal-form-textarea:focus {
+    border-color: var(--color-theme);
+}
+
+.modal-form-textarea::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #75757580;
+}
+
+.modalw-form-custom-checkbox {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 15px;
+    outline: 2px solid var(--color-main-text);
+    outline-offset: -2px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    cursor: pointer;
+}
+
+.modalw-form-icon-ch {
+    fill: #fff;
+}
+
+.modalw-form-checkbox:focus + .modalw-form-custom-checkbox {
+    outline-color: var(--color-theme);
+}
+
+.modalw-form-checkbox:checked + .modalw-form-custom-checkbox {
+    background-color: var(--color-theme);
+    outline-color: var(--color-theme);
+}
+
+.modalw-form-label-checkbox {
+    padding-left: 23px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--color-secondary-text);
+    cursor: pointer;
+}
+
+.agree-link {
+    color: var(--color-theme);
+    transition: color var(--anim-link);
+}
+
+.agree-link:hover {
+    color: var(--color-btn-hover);
+}
+
+.modalw-form-btn {
+    width: 200px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-theme);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+}
+
 
 /*----------- Esplly --------------*/
 
@@ -748,6 +915,7 @@ input{
     padding: 0 16px;
     outline: transparent;
     color: #fff;
+    transition: border-color var(--anim-link);
 }
 
 .footer-form-field:focus {
